@@ -1,0 +1,970 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,400&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,800;1,100&display=swap');
+
+
+:root{
+    --bg-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+    --bg-carolina-blue: hsla(199, 89%, 49%, 1);
+    --bg-prussian-blue: hsla(216, 33%, 20%, 1);
+    --bg-oxford-blue: hsla(222, 44%, 13%, 1);
+    --bg-oxford-blue-2: hsla(222, 47%, 11%, 1);
+    --bg-primary-color: #48C563;
+    --bg-secondary-color: #3F75C2;
+
+
+    --text-white: hsla(0, 0%, 100%, 1);
+    --text-alice-blue: hsla(216, 100%, 95%, 1);
+    --text-columbia-blue: hsla(199, 69%, 84%, 1);
+    --text-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+    --text-carolina-blue: hsla(199, 89%, 49%, 1);
+    --text-shadow-blue: hsla(217, 24%, 59%, 1);
+    --text-slate-gray: hsla(217, 17%, 48%, 1);
+
+
+
+    
+    --gradient-1: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%);
+    --gradient-2: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);
+    --gradient-3: linear-gradient(0deg, #000d1a, transparent);
+
+
+
+    --border-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+    --border-prussian-blue: hsla(216, 33%, 20%, 1);
+    --border-white: hsl(0, 0%, 100%);
+    --border-white-alpha-15: hsla(0, 0%, 100%, 0.15);
+
+
+    --white: hsl(0, 0%, 100%, 1);
+    --black: hsl(0, 0%, 0%, 1);
+
+
+    --fontFamily-noto_sans: 'Noto Sans', sans-serif;
+
+    --fontSize-1: 2.9rem;
+    --fontSize-2: 2.0rem;
+    --fontSize-3: 1.8rem;
+    --fontSize-4: 1.6rem;
+    --fontSize-5: 1.5rem;
+    --fontSize-6: 1.4rem;
+    --fontSize-7: 1.2rem;
+    --fontSize-8: 1.3rem;
+
+
+    --weight-medium: 500;
+    --weight-semiBold: 600;
+    --weight-bold: 700;
+    --weight-extraBold: 800;
+
+
+    --lineHeight-1: 1.3;
+    --lineHeight-2: 1.5;
+    --lineHeight-4: 1.5;
+
+
+
+    --shadow-1: 0 8px 20px 0 hsla(0, 0%, 0%, 0.05);
+    --shadow-2: 0px 3px 20px hsla(180, 90%, 43%, 0.2);
+
+
+
+    --radius-6: 6px;
+    --radius-8: 8px;
+    --radius-16: 16px;
+    --radius-48: 48px;
+    --radius-circle: 50%;
+    --radius-pill: 200px;
+
+
+    --section-padding: 70px;
+
+
+
+
+
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease;
+    --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+
+
+
+    }
+
+
+
+    
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+li{
+    list-style-type: none;
+}
+
+a,
+img,
+span,
+input,
+button,
+ion-icon{
+    display: block;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img{
+    height: auto;
+}
+
+
+input,
+button{
+    background: none;
+    border:none;
+    font: inherit;
+}
+
+button {cursor: pointer}
+
+ion-icon{
+    pointer-events: none;
+}
+
+
+address {
+    font-style: normal;
+}
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    /* overflow: hidden; */
+}
+
+body{
+    background-color: var(--bg-oxford-blue-2);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 1.6rem;
+    line-height: var(--lineHeight-4);
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--bg-carolina-blue);
+    border-radius: var(--radius-pill)
+}
+
+
+.side_bar{
+    /* display: none; */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 23rem;
+    background: #1D4350;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #48C563, #3F75C2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #48C563, #3F75C2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: 0.2s linear;
+    /* background-color: var(--bg-prussian-blue) */
+}
+
+
+
+.side_bar.active{
+    width: 5rem;
+    top: 0;
+    left: 0;
+}
+
+.side_bar.active .search, .side_bar.active .nav_list span a, .side_bar.active .search {
+    display: none;
+}
+
+.side_bar.active .nav_bar .nav_list{
+    background: inherit;
+    padding-top: 5rem;
+    width: 100%;
+}
+
+ .side_bar.active .nav_bar .nav_list span{
+    padding-top: 15px;
+} 
+
+
+.side_bar.active .side_bar_container .logo{
+    margin-top: 5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.side_bar_container{
+    padding: 20px 12px;
+    position: relative;
+    
+}
+
+.side_bar .side_bar_container .logo{
+    width: 70px;
+    height: 70px;
+}
+
+
+
+.search{
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--radius-8);
+    display: flex;
+    align-items: center;
+}
+
+.search input{
+    width: 100%;
+    padding-left: 2rem;
+    outline: none;
+}
+
+.nav_bar{
+    margin-top: 20px;
+}
+
+.nav_bar .nav_list{
+    background: inherit;
+    padding-top: 3rem;
+    width: 100%;
+}
+
+.nav_bar .nav_list span{
+    display: flex;
+    align-items: center;
+}
+
+
+.nav_bar .nav_list span a{
+    display: inline-block; 
+    padding: 1.2rem 0;
+    color: var(--white);
+    padding-left: 1.2rem;;
+    font-size: 1.4rem;
+    width: 80%;
+    /* border: 2px solid red; */
+}
+
+.nav_bar .nav_list span a:hover{
+    padding-left: 1.5rem;
+    color: var(--text-carolina-blue);
+}
+
+
+.nav_bar .nav_list span i, ion-icon{
+    color: white;
+    font-size: 1.6rem;
+}
+
+.close1{
+    position: absolute;
+    top: 3.5rem;
+    right: 0.8rem;
+    font-size: 3rem;
+    cursor: pointer;
+  
+   
+}
+
+.close1 ion-icon{
+    font-size: 2.0rem;
+}
+
+
+.home_container{
+   
+    background: var(--bg-secondary-color);
+    height: 100vh;;
+    /* border: 2px solid red; */
+    margin-left: 23rem;
+    margin-top: -2.2rem;
+    position: relative;
+
+
+}
+
+.home_container.active{
+    margin-left: 5rem;
+    width: calc(100% - 5rem);
+}
+
+
+.home_container .first_bar{
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+.home_container .first_bar p{
+    width: 49%;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1.2rem;
+    color: white;
+    border-radius: var(--radius-8);
+    box-shadow: 0 0 2px solid grey;
+    border: 2px solid grey;
+    background: var(--bg-primary-color);
+}
+
+.home_container .first_bar p span{
+
+    display: inline-block;
+    font-size: 2.0rem;
+}
+
+
+
+.transaction_container{
+    width: 100%;
+    padding-top: 20px;
+    background: var(--bg-oxford-blue);
+}
+
+.transaction_container h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.transaction_container table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    padding-bottom: 30px;
+}
+
+.transaction_container table tr th, td{
+    text-align: right;
+   
+    padding: 5px;
+    /* border: 2px solid var(--white); */
+}
+
+
+.transaction_container table tr{
+    border-bottom: .1px solid rgba(181, 192, 202, 0.394);
+
+}
+
+
+.transaction_container .header{
+    background-color: #1D1D22;
+
+}
+
+.table_container{
+    max-height: 220px;
+    overflow-y: scroll;
+}
+
+.thead{
+    position: sticky;
+    top: 0;
+   
+    margin: 0;
+}
+
+.transaction_container table tr.buy td{
+    color: green;
+}
+.transaction_container table tr.sell td{
+    color: red;
+}
+
+
+.table_cont{
+    padding-top: 20px;
+    overflow-x: auto;
+    background: var(--gradient-3);
+}
+
+.table_cont::-webkit-scrollbar{
+    height: 5px;
+}
+
+.table_container::-webkit-scrollbar{
+    height: 5px;
+}
+
+
+.table_cont table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    padding-bottom: 30px;
+}
+
+.table_cont table thead{
+    background-color: #1D1D22;
+    
+}
+
+.table_cont table tr th, td{
+    text-align: right;
+   
+    padding: 8px;
+    /* border: 2px solid var(--white); */
+}
+
+
+
+.table_cont table tr{
+    border-bottom: .1px solid rgba(181, 192, 202, 0.394);
+    border-top: .1px solid rgba(181, 192, 202, 0.394);
+
+}
+
+
+
+.table_cont table thead tr th:not(first-child){
+    border-left: .1px solid rgba(181, 192, 202, 0.394);
+}
+
+
+.table_cont table tr td:first-child{
+    background: var(--bg-oxford-blue-2);
+}
+
+.table_cont tbody tr td .buton{
+    color: var(--white);
+    box-shadow: var(--radius-48);
+    border: 0.2rem solid var(--bg-secondary-color);
+    border-radius: 5px;
+    padding: 2px;
+    margin-right: 10px;
+
+
+}
+
+.fixed{
+    /* background: var(--bg-oxford-blue-2); */
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    left: 0;
+    align-items: center;
+    min-width: 200px;
+    border-right: .1px solid rgba(181, 192, 202, 0.394);
+}
+
+.table_cont table tr td .circle{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    /* border: 2px solid red; */
+}
+
+.table_cont table tr td .circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+.table_cont table tr td .base{
+    color: var(--white);
+}
+
+.overlay{
+    background: var(--bg-oxford-blue);
+    height: 105vh;
+    width:100%;
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -2.2rem;
+    z-index: 1000;
+}
+
+
+
+#overlay{
+    display: none;
+}
+
+#overlay.active{
+    display: block;
+}
+
+.overlay_container{
+    display: flex;
+}
+
+.overlay_container .major{
+    width: 65%;
+    background: var(--bg-primary-color);
+    height: 105vh;
+}
+
+.overlay_container .minor{
+    width: 35%;
+    background: var(--white);
+    height: 105vh;
+    
+}
+
+.overlay_container .minor .small_nav{
+    font-size: 2.3rem;
+    color: var(--white);
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 5px 15px;
+    background: var(--bg-secondary-color)
+}
+
+.overlay .minor .small_header{
+    font-size: 2.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-primary-color);
+    padding: 15px;
+
+}
+
+
+.overlay .minor .small_content{
+    background: var(--bg-secondary-color);
+    height: 450px;
+    padding-top: 15px;
+}
+
+.flex_it{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+
+}
+
+.small{
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.flex1{
+    width: 49%;
+    border-radius: var(--radius-6);
+    box-shadow: 0 1.5px 3px var(--bg-primary-color);
+    text-align: center;
+}
+
+.flex2{
+    width: 32%;
+    border-radius: var(--radius-6);
+    box-shadow: 0 1.5px 3px var(--bg-primary-color);
+
+    text-align: center;
+}
+
+.flex3{
+    width: 24%;
+      border-radius: var(--radius-6);
+    text-align: center;
+    box-shadow: 0 1.5px 3px var(--bg-primary-color)
+}
+
+.group_cont{
+    margin: 10px;
+    border: 0.5px solid var(--bg-primary-color);
+    display: flex;
+    padding: 10px;
+
+}
+
+.group_cont .gp_flex{
+    border-right: 0.5px solid var(--bg-primary-color);
+    width: 35%;
+}
+
+.flex_low{
+    margin: 10px 0;
+    margin-bottom: 15px;
+}
+
+
+
+.buy_sell{
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 8px;
+}
+
+.group_cont2{
+    width: 65%;
+}
+
+.buy-col{
+    width: 100%;
+}
+
+.progressive{
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+}
+
+.pro1{
+    width: 60%;
+    background: green;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.pro2{
+    width: 40%;
+    background: red;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.trade_btn{
+    width: 80%;
+    background: var(--bg-primary-color);
+    text-align: center;
+    color: white;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    line-height: 2.5;
+    margin: 10px auto;
+    
+}
+
+.major{
+    margin-top: 20px;
+    padding: 15px;
+}
+
+/* tabs */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  color: var(--bg-secondary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  height: 328px;
+}
+/* transaction overlay */
+
+
+.transaction_overlay{
+    width: 100%;
+    padding-top: 10px;
+    background: var(--bg-secondary-color);
+}
+
+.transaction_overlay h1{
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+table thead th:first-child{
+    position: sticky;
+    left: 0;
+    background: black;
+    z-index: 100;
+}
+
+table th:first-child{
+    position: sticky;
+    left: 0;
+    background: black;
+    z-index: 100;
+}
+
+
+.transaction_overlay table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    padding-bottom: 30px;
+}
+
+.transaction_overlay table tr th, td{
+    text-align: right;
+    font-size: 1.2rem;
+    padding: 13px;
+    /* border: 2px solid var(--white); */
+}
+
+tbody tr td:first-child{
+    background: var(--bg-oxford-blue);
+}
+
+.color1{
+    background:inherit;
+}
+
+.color2{
+    background: var(--bg-primary-color);
+}
+
+
+.color3{
+    background: var(--bg-oxford-blue);
+}
+
+.transaction_overlay table tr{
+    border-bottom: .1px solid rgba(181, 192, 202, 0.394);
+
+}
+
+
+.transaction_overlay .header{
+    background-color: #1D1D22;
+
+}
+
+.table_container{
+    max-height: 220px;
+    overflow-y: scroll;
+}
+
+.thead{
+    position: sticky;
+    top: 0;
+   
+    margin: 0;
+}
+
+.transaction_overlay table tr.buy td{
+    color: green;
+}
+.transaction_overlay table tr.sell td{
+    color: red;
+}
+
+#chart {
+    width: 100%;
+    height: 50%;
+    position: relative;
+  }
+
+  .candlestick {
+    position: absolute;
+    width: 10px;
+    bottom: 0;
+  }
+  
+  .bullish {
+    background-color: green;
+  }
+  
+  .bearish {
+    background-color: red;
+  }
+  
+  .graph_display{
+    width: 100%;;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-left: 5px solid gray;
+    border-bottom: 5px solid gray;
+    overflow-y: scroll;
+  }
+
+  /* 
+  
+  */
+
+  @media only screen and (max-width: 800px){
+
+    .overlay_container{
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+    .overlay_container .major{
+        display: none;
+        width: 0;
+        overflow: hidden;
+    }
+
+
+    table th{
+        font-size: 1.5rem;
+    }
+
+
+
+
+    
+.home_container .first_bar p{
+    font-size: 1rem;
+    padding: 1rem;
+   
+}
+
+.home_container .first_bar p span{
+
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+
+
+.transaction_container{
+    width: 100%;
+    background: var(--bg-oxford-blue);
+}
+
+.transaction_container h1{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.transaction_container table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    padding-bottom: 30px;
+}
+
+.transaction_container table tr th, td{
+    text-align: right;
+   
+    padding: 5px;
+    /* border: 2px solid var(--white); */
+}
+
+
+
+    .overlay_container .minor{
+
+        width: 100%;
+        background: var(--white);
+        height: 120vh;
+    }
+
+    .table_cont table tr td .circle{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        /* border: 2px solid red; */
+    }
+  }
+
+  @media only screen and (max-width: 650px){
+
+    .home_container{
+        width: 100%;
+        margin-left: 0rem;
+        position: relative;
+    }
+
+   
+
+ 
+    
+
+    .overlay_container .minor{
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 500px){
+
+    .home_container{
+        width: 100%;
+        margin-left: 0rem;
+        position: relative;
+    }
+
+    .table_cont table tr td .circle{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        /* border: 2px solid red; */
+    }
+
+   
+ 
+    
+
+    .overlay_container .minor{
+        width: 100%;
+    }
+  }

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />"
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div  id="side_bar" class="side_bar">
+        <div class="side_bar_container">
+            <span  class="logo">
+               <img style="width: 100%; height: 100%; border-radius: 50%;" src="img/logo.jpeg" alt="">
+            </span>
+            <span class="close1" onclick="toggleNav()">
+                <ion-icon id="togs" name="caret-back-circle"  ></ion-icon>
+            </span>
+            <div class="nav_bar">
+                <div class="search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><input type="search"
+                        name="search" id="" placeholder="search"></div>
+                <div class="nav_list">
+                    <span><i class="fa-solid fa-star"></i><a href="#">Watchlist</a></span>
+                    <span><i class="fa-solid fa-bell"></i><a href="#">Alert</a></span>
+                    <span>
+                        <ion-icon name="grid"></ion-icon><a href="#">Multichart</a>
+                    </span>
+                    <span>
+                        <ion-icon name="flame"></ion-icon><a href="#">Alert</a>
+                    </span>
+                    <span>
+                        <ion-icon name="bar-chart"></ion-icon><a href="#">Gainers and Loosers</a>
+                    </span>
+                    <span>
+                        <ion-icon name="swap-vertical"></ion-icon><a href="#">Alert</a>
+                    </span>
+                    <!-- <span><i class="fa-duotone fa-chart-line-up-down"></i></i><a  href="#">Multichart</a></span>
+                <span><i class="fa-regular fa-arrow-up-arrow-down"></i><a  href="#">New Trends</a></span>
+                <span><i class="fa-duotone fa-chart-line-up-down"></i><a  href="#">Gainers and Losers</a></span> -->
+
+                
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home_container" class="home_container">
+        <div class="first_bar">
+            <p>24H VOLUME <span>$2.40B</span></p>
+            <p>24H TXNX <span>$3,398,079</span></p>
+        </div>
+
+        <div class="table-general">
+            <div class="table_cont">
+
+                <table>
+                    <thead>
+
+                        <tr>
+                            <th class="fixed head">Token</th>
+                            <th class="head">PRICE</th>
+                            <th class="head">TXNS</th>
+                            <th class="head">VOLUME</th>
+                            <th class="head">MAKERS</th>
+                            <th class="head">5M</th>
+                            <th class="head">1H</th>
+                            <th class="head">6H</th>
+                            <th class="head">24H</th>
+                            <th class="head">LIQUIDITY</th>
+                            <th class="head">FDV</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="general-body-container">
+
+                    </tbody>
+
+
+
+                </table>
+            </div>
+
+
+
+
+            <div class="transaction_container">
+                <h1>TRANSACTION</h1>
+                <div class="table_container">
+
+                    <table>
+                        <tr class="header thead">
+                            <th  class="fixed">DATE</th>
+                            <th>TYPE</th>
+                            <th>USD</th>
+                            <th>WETH</th>
+                            <th>USDC</th>
+                            <th>PRICE</th>
+                            <th>MAKER</th>
+                            <th>TXNS</th>
+
+                        </tr>
+                        <tbody class="table_body">
+
+                        </tbody>
+
+
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="overlay" class="overlay">
+            <div class="overlay_container">
+
+                <div class="major">
+                    <div style="width: 100%; height: 300px;" class="image_chart">
+                        <img style="width: 100%; height: 100%" src="img/chart.PNG" alt="">
+                    </div>
+                    <!-- <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'h1') ">h1</button>
+                        <button class="tablinks" >h6</button>
+                        <button class="tablinks">h4</button>
+                      </div>
+
+                      
+                      <div id="h1" class="tabcontent">
+                      
+                        <div class="graph_display">
+
+                            <div id="chart"></div>
+                        </div>
+                      </div>
+                      
+                      <div id="h6" class="tabcontent">
+                        <div class="graph_display">
+
+                            <div id="chart"></div>
+                        </div> 
+                      </div>
+                      
+                      <div id="h24" class="tabcontent">
+                        <div class="graph_display">
+
+                            <div id="chart"></div>
+                        </div>
+                      </div> -->
+
+                      <div class="transaction_overlay">
+                        <h1>TRANSACTIONS</h1>
+                        <div class="table_container">
+        
+                            <table>
+                                <tr class="header thead">
+                                    <th>DATE</th>
+                                    <th>TYPE</th>
+                                    <th>USD</th>
+                                    <th>WETH</th>
+                                    <th>USDC</th>
+                                    <th>PRICE</th>
+                                    <th>MAKER</th>
+                                    <th>TXNS</th>
+        
+                                </tr>
+                                <tbody class="table_body1">
+        
+                                </tbody>
+        
+        
+        
+        
+                            </table>
+                        </div>
+                    </div>
+                      
+                </div>
+                
+                <div class="minor">
+                    
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
